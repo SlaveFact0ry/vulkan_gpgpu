@@ -19,10 +19,10 @@ int main() {
       return 1;
     }
  
-    VkPhysicalDevice* physicalDevices = malloc(sizeof(VkPhysicalDevice)*deviceCount);
+    VkPhysicalDevice* physicalDevices = new VkPhysicalDevice[deviceCount];
     vkEnumeratePhysicalDevices(instance, &deviceCount, physicalDevices);
  
- 
+    delete[] physicalDevices;  // 마지막에 메모리 해제
     vkDestroyInstance(instance, nullptr);
     return 0;
 }
