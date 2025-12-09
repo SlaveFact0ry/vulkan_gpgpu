@@ -11,6 +11,7 @@ int main() {
         std::cerr << "Failed to create Vulkan instance!" << std::endl;
         return 1;
     }
+    
     uint32_t deviceCount = 0;
     vkEnumeratePhysicalDevices(instance, &deviceCount, NULL);
 
